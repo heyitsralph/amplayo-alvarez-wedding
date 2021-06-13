@@ -178,7 +178,7 @@ P:last-child{
     background: #fff;
     font-size: 0.8em;
     display: inline-block;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .mobile-section{
@@ -255,6 +255,11 @@ P:last-child{
     z-index: 999;
     width: calc(100% - 40px);
     top: 0;
+}
+
+#video-pop{
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 /* ===== 2nd Section: Invitation text ===== */
@@ -676,7 +681,6 @@ footer{
     #section-hero{
         background: linear-gradient(0deg, #f5f5dcad, rgba(0,0,0,0.3) 200px), url(../images/image-02.jpg) top center no-repeat;
         background-size: cover;
-        padding-bottom: 130px;
         padding-top: 20px;
         min-height: unset;
         position: relative;
