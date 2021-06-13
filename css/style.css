@@ -237,7 +237,7 @@ P:last-child{
 
 #navigation li a{
     color: #333;
-    display: block;
+    display: block; 
     text-decoration: none;
 }
 
