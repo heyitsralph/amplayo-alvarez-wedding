@@ -32,7 +32,7 @@ P:last-child{
 
 .text-center{ text-align: center;}
 
-.container{ max-width: 1080px; margin: 0 auto; height: 100% }
+.container{ width: 100%; max-width: 1080px; margin: 0 auto; height: 100% }
 
 .row{ display: flex; margin: auto;}
 .row-valign-top{ align-items: flex-start; }
@@ -356,7 +356,7 @@ P:last-child{
     background: #F5F5DC;
     border-radius: 0 25px;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     color: #333;
     position: relative;
     height: 100%;
@@ -468,12 +468,13 @@ P:last-child{
     padding: 10px 15px;
     background: #fff;
     color: #908671;
-    font-size: 100%;
+    font-size: 18px;
     font-weight: bold;
     line-height: 1.3;
     border-radius: 5px;
     box-shadow: 0 10px 80px rgba(0,0,0,0.2);
 }
+
 
 /* ===== 4th Section: Wishing Well & Protocol ===== */
 #section-wishingwell{
@@ -493,9 +494,13 @@ P:last-child{
 }
 
 .images-break{
-    margin: 0 -20px;
+    margin: 0 auto;
     padding: 80px 0 60px;
     overflow-x: hidden;
+}
+
+.images-break-loc_tag{
+    margin-top: 80px;
 }
 
 .images-break img{
@@ -528,6 +533,24 @@ P:last-child{
     transform: rotatez(10deg);
 }
 
+.safety-protocol-wrap{
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.safety-protocol-wrap img{
+    width: 100px; 
+}
+
+.safety-protocol-wrap p{
+    padding-left: 30px;
+    text-align: left;
+}
+
+.wedding-gif{
+    max-width: 500px;
+}
 
 /* ===== 5th Section: RSVP ===== */
 #section-rsvp{
@@ -537,7 +560,7 @@ P:last-child{
     position: relative;
     z-index: 100;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 100px;
 }
 
 #rsvp-box{
@@ -546,7 +569,6 @@ P:last-child{
     padding: 40px 50px;
     box-shadow: 0 30px 100px rgba(0,0,0,0.3);
     min-height: 500px;
-    top: -150px;
     position: relative;
     max-width: 600px;
     margin: 0 auto;
@@ -581,7 +603,15 @@ P:last-child{
     padding-top: 400%; /* 1:1 Aspect Ratio */
 }
 
-#rsvp-form iframe {
+.video-wrap{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 62.5%; /* 16:10 Aspect Ratio */
+}
+
+#rsvp-form iframe,
+.video-wrap iframe{
     position: absolute;
     top: 0;
     left: 0;
@@ -590,6 +620,15 @@ P:last-child{
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.wedding-gif{
+    width: 70%;
+    height: auto;
+    border: 4px solid #fff;
+    transform: rotatez(-10deg);
+    margin-top: -120px;
+    margin-bottom: 120px;
 }
 
 /* ====== FOOTER ====== */
@@ -604,12 +643,6 @@ footer{
 /* =========================================== */
 /* ========== MOBILE RESPONSIVENESS ========== */
 /* =========================================== */
-@media screen and (min-width: 768px){
-    .mobile{
-        display: none;
-    }
-}
-
 @media screen and (max-width: 767px){
     body{
         font-size: 18px;
@@ -731,9 +764,12 @@ footer{
         opacity: 0.6;
     }
     
+    #section-rsvp{
+        padding-bottom: 50px;
+    }
+    
     #rsvp-box{
         padding: 20px;
-        top: -50px;
     }
     
     .location-ceremony{
@@ -751,7 +787,7 @@ footer{
         transform: rotatez(10deg);
         width: 80%;
         margin-top: -100px;
-        right: -50px;
+        right: -20px;
         z-index: 10;
     }
     
@@ -779,17 +815,188 @@ footer{
         right: -20px;
     }
     
-    .images-break.images-break-tag_wish{
+    .images-break-tag_wish{
         overflow: visible;
         padding-top: 0;
     }
-    
+
     .wedding-gif{
-        width: 80%;
-        height: auto;
-        border: 4px solid #fff;
-        transform: rotatez(-10deg);
-        margin-top: -120px;
-        margin-bottom: 120px;
+        width: 90%;
+        margin-bottom: 80px;
+    }
+    
+    .safety-protocol-wrap{
+        flex-flow: column;
+    }
+    
+    .safety-protocol-wrap img{
+        margin: 0 auto 20px;
+    }
+    
+    .safety-protocol-wrap p{
+        padding-left: 0;
+    }
+    
+    img[src="images/icon-social-ditance.png"]{
+        width: 80px;
+    }
+    
+    .images-break-loc_tag{
+        margin-top: 0;
+    }
+    
+    .images-break{
+        margin-left: -20px;
+        margin-right: -20px;
+        max-width: unset;
+        width: calc(100% + 40px);
+    }
+}
+
+@media screen and (min-width: 767px){
+    .mobile{
+        display: none;
+    }
+    
+    .main-text{
+        padding: 30px;
+        margin: 0 auto 50px;
+    }
+    
+    #section-hero{
+        padding-top: 60px;
+    }
+    
+    .date{
+        margin-bottom: 0;
+    }
+    
+    #section-hero{
+        background: linear-gradient(0deg, #f5f5dcad, rgba(0,0,0,0.4) 200px), url(../images/bg-hero.jpeg) top center no-repeat;
+    }
+    
+    #section-date{
+        padding-top: 60px;
+    }
+    
+    .wedding-date{
+        font-size: 70px;
+    }
+    
+    .countdown{
+        margin-bottom: 40px;
+    }
+    
+    .hashtag{
+        font-size: 30px;
+    }
+    
+    #section-wishingwell{
+        padding-top: 0;
+    }
+    
+    /* images break */
+    .images-break{
+        margin-left: -20px;
+        margin-right: -20px;
+        max-width: unset;
+        width: calc(100% + 40px);
+    }
+    
+    .images-break img{
+        max-width: 65%;
+    }
+    
+    .image-break-2 {
+        right: -35%;
+        margin-top: -30%;
+    }
+    
+    
+    .image-break-5{
+        width:40%;
+        transform: rotateZ(-15deg);
+        left: 0 ;
+        float: left;
+    }
+    
+    .image-break-7{
+        width: 60%;
+        margin-top: -40%;
+        transform: rotateZ(5deg);
+        position: relative;
+        z-index: 5;
+    }
+    
+    .image-break-6{
+        width: 40%;
+        float: right;
+        margin-top: -50%;
+        transform: rotateZ(15deg);
+        position: relative;
+        z-index: 4;
+    }
+    
+    .image-break-8{
+        float: left;
+        width: 45%;
+        transform: rotateZ(-15deg);        
+    }
+    
+    .image-break-9{
+        float: right;
+        width: 65%;
+        margin-top: -60%;
+        transform: rotateZ(8deg);        
+    }
+    
+    .images-break-tag_wish{
+        padding-top: 60px;
+        margin-top: -150px;
+    }
+    
+    #rsvp-form{
+        padding-top: 1100px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    #section-hero{
+        padding-top: 120px;
+    }
+
+    #section-hero .container{
+        display: flex;
+    }
+
+    .main-text{
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .video-col{
+        padding-top: 55px;
+        width: 70%;
+    }
+    
+    /* Images break */
+    .images-break{
+        overflow: visible;
+        padding-bottom: 100px;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .images-break-loc_tag{
+        margin-top: 80px;
+    }
+    
+    .image-break-1{
+        left: -150px;
+    }
+    
+    .image-break-2{
+        right: -20%;
     }
 }
